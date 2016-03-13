@@ -54,11 +54,13 @@ static_assert(std::alignment_of<CRCPBasic>::value == std::alignment_of<CRCPBasic
 
 void basic_new_stack(basic s)
 {
+    printf("\ncreating pointer: %p", s);
     new(s) CRCPBasic();
 }
 
 void basic_free_stack(basic s)
 {
+    printf("\nfreeing pointer: %p", s);
     s->m.~RCP();
 }
 
